@@ -97,16 +97,20 @@ export default class App extends React.Component {
   onEqual() {
     const finalFormula = this.state.formula.concat(this.state.input);
     // Call to API
-    const result = Operations.getResult(finalFormula);
-    console.log("RESULT: ", result);
+    const result = Operations.getResult(finalFormula)
+      .then(response => {
+        console.log("RESULT: ", response);
+        console.log("RESULT.data: ", response.data);
+        console.log("RESULT.data.message: ", response.data.message);
 
-    if (!Number.isNaN(result)) {
-      this.setState({
-        input: result + "",
-        formula: [],
-        afterEqual: true
+        if (!Number.isNaN(response.data.message)) {
+          this.setState({
+            input: response.data.message + "",
+            formula: [],
+            afterEqual: true
+          });
+        }
       });
-    }
   }
 
 
@@ -133,5 +137,3 @@ export default class App extends React.Component {
     );
   };
 }
-
-// export default App;
