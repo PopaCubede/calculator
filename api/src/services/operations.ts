@@ -1,9 +1,13 @@
-// export interface ICalcResponse {
-//   response: number;
+export interface ICalcResponse {
+  message: number;
+}
+
+// interface CalcRequest {
+//   finalFormula: string[];
 // }
 
-export const finalResult = async (finalFormula: any[]): Promise<any> => {
-  const orderedFinalFormula: any[] = orderOperation(finalFormula);
+export const finalResult = async (finalFormula: string[]): Promise<ICalcResponse> => {
+  const orderedFinalFormula: string[] = orderOperation(finalFormula);
   return resolve(orderedFinalFormula);
 };
 
@@ -25,8 +29,8 @@ function getPriority(input: any) {
   return 0;
 }
 
-function orderOperation(finalFormula: any[]) {
-  let result: any[] = [], stack: any[] = [];
+function orderOperation(finalFormula: string[]) {
+  let result: string[] = [], stack: any[] = [];
 
   finalFormula.forEach(item => {
     if (isNumber(item)) {
@@ -52,7 +56,7 @@ function orderOperation(finalFormula: any[]) {
   return result;
 }
 
-function resolve(orderedFinalFormula: any[]): any {
+function resolve(orderedFinalFormula: string[]): ICalcResponse {
   let stack: any[] = [];
 
   orderedFinalFormula.forEach(item => {
@@ -60,7 +64,7 @@ function resolve(orderedFinalFormula: any[]): any {
       stack.push(item);
     } else if (isOperator(item)) {
       const num1 = Number.parseFloat(stack.pop()), num2 = Number.parseFloat(stack.pop());
-      let result: any = '';
+      let result: number = 0;
 
       switch (item) {
         case '+':
@@ -85,5 +89,9 @@ function resolve(orderedFinalFormula: any[]): any {
     }
   });
 
-  return Number.parseFloat(stack[0]);
+  let finalResult: ICalcResponse = {
+    message: Number.parseFloat(stack[0])
+  };
+
+  return finalResult;
 }
