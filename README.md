@@ -4,21 +4,21 @@ Here is a test to make a basic CalculatorApp with prioritization of the operator
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install the app.
+Use the package manager [npm](https://www.npmjs.com/) to install the app, by doing so:
 
-First you need to build de backend, from the root folder you can type:
+1. First you need to build de backend, from the root folder.
 
 ```bash
 cd back && npm i && npm run build
 ```
 
-Then, you can get the packages for the front:
+2. Then, you can get the packages for the front.
 
 ```bash
 cd .. && cd front && npm i
 ```
 
-Finally, you can run both apps by going to the root folder and launch the docker-compose file:
+3. Finally, you can run both apps by going to the root folder and launch the docker-compose file.
 
 ```bash
 cd .. && docker-compose up
@@ -32,10 +32,10 @@ Once the container is up, you can access:
 
 If you want to test the backend via [Postman](https://www.postman.com/):
 - open a new tab
-- select POST call
+- select *POST* call
 - enter **http://localhost:5000/calc** as the URL
 - in the Body tab, select "raw" in the radio buttons and JSON in the dropdown list
-- in the input type something like:
+- in the input, type something like:
 ```bash
 {
     "finalFormula": ["9", "/", "6", "-", "18.5", "*", "2"]
