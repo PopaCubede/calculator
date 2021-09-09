@@ -7,6 +7,13 @@ api/.DS_Store
 api/debug.log
 api/node_modules
 
+back/.env
+back/build
+back/npm-debug.log
+back/.DS_Store
+back/debug.log
+back/node_modules
+
 front/.env
 front/build
 front/npm-debug.log
