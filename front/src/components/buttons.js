@@ -18,11 +18,11 @@ export default class Buttons extends React.Component {
         <button id="one" onClick={this.props.onNumber}>1</button>
         <button id="two" onClick={this.props.onNumber}>2</button>
         <button id="three" onClick={this.props.onNumber}>3</button>
-        <button id="subtract" onClick={this.props.onOperator}>-</button>
+        <button id="minus" onClick={this.props.onOperator}>-</button>
 
         <button id="zero" onClick={this.props.onNumber}>0</button>
         <button id="dot" onClick={this.props.onDot}>.</button>
-        <button id="clear" onClick={this.props.onClear}>AC</button>
+        <button id="clear" onClick={this.props.onClear}>C</button>
         <button id="add" onClick={this.props.onOperator}>+</button>
 
         <button id="equals" onClick={this.props.onEqual}>=</button>

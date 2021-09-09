@@ -5,7 +5,11 @@
     "baseUrl": "./",
     "outDir": "./build",
     "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "inlineSourceMap": true
+    "inlineSourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   }
 }

@@ -16,10 +16,8 @@ export function isOperator(input) {
 }
 
 export async function getResult(finalFormula) {
-  console.log("FINAL FORMULA: ", finalFormula);
+  // console.log("FINAL FORMULA: ", finalFormula);
   let result = await axios.post(apiUrl + "/calc", { finalFormula });
-  // let result = await axios.get(apiUrl + "/ping");
-  // let result = await axios.get(apiUrl + "/ping/blabla");
-  console.log('OPERATIONS RESULT: ', result);
+  // console.log('OPERATIONS RESULT: ', result);
   return result;
 }

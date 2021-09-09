@@ -1,3 +1,3 @@
 export interface ICalc {
-  resolveCalc: (finalFormula: any) => Promise<any>,
+  resolveCalc: (finalFormula: string[]) => Promise<any>,
 }

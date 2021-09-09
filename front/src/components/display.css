@@ -1,13 +1,14 @@
 /* Display */
 
 .display {
-  width: 100%;
+  background-color: rgb(86, 88, 88);
+  color: rgb(255, 250, 236);
+  width: auto;
   display: flex;
   flex-flow: column;
   -ms-flex-flow: column;
   justify-content: space-between;
   padding: 15px 15px 0 15px;
-  background-color: #fff;
   flex-grow: 1;
 }
 
@@ -15,11 +16,12 @@
 .display-input {
   width: 100%;
   resize: none;
-  font-family: Nunito Sans, Helvetica, Arial, sans-serif;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   border: none;
   outline: none;
   text-align: right;
   background-color: inherit;
+  color: rgb(255, 250, 236);
 }
 
 .display-formula {
@@ -30,9 +32,10 @@
 .display-input {
   flex-shrink: 0;
   font-size: 1.75rem;
-  color: #888;
+  color: rgb(255, 250, 236);
   white-space: nowrap;
   padding-bottom: 15px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @media (min-width: 768px) {

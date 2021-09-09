@@ -97,11 +97,9 @@ export default class App extends React.Component {
   onEqual() {
     const finalFormula = this.state.formula.concat(this.state.input);
     // Call to API
-    const result = Operations.getResult(finalFormula)
+    Operations.getResult(finalFormula)
       .then(response => {
-        console.log("RESULT: ", response);
-        console.log("RESULT.data: ", response.data);
-        console.log("RESULT.data.message: ", response.data.message);
+        // console.log("RESULT: ", response);
 
         if (!Number.isNaN(response.data.message)) {
           this.setState({

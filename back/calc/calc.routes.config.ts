@@ -9,9 +9,11 @@ export class CalcRoutes extends CommonRoutesConfig {
 
   configureRoutes() {
     this.app.route(`/calc`)
-      // .get(CalcController.resolveCalc)
       .post((req: express.Request, res: express.Response) => {
-        CalcController.resolveCalc(req, res);
+        CalcController.resolveCalc(req.body).then((result) => {
+          // res.status(result.error).send({ message: result.message });
+          res.send({ message: result.message });
+        });
       });
 
     return this.app;
